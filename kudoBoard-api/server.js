@@ -21,10 +21,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("Hello from the backend -- You are currently at the / route");
   });
-
 // Boards routes
 app.use("/boards", boardsRoutes);
-
 // Cards routes
 app.use("/cards", cardsRoutes);
 

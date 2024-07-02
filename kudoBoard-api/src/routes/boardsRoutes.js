@@ -4,8 +4,6 @@ const boardsController = require("../controllers/boardsController");
 
 // get all the boards
 router.get("/", boardsController.getAllBoards);
-// router.get("/", console.log("routes"));
-
 //get boards by ID
 router.get("/:id", boardsController.getBoardsById);
 //add a new boards
