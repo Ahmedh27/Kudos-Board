@@ -71,9 +71,9 @@ const CreateBoardButton = () => {
                 />
               </div>
               <button type="submit">Create Board</button>
-              <button type="button" className="close-button" onClick={closeModal}>
+              {/* <button type="button" className="close-button" onClick={closeModal}>
                 Close
-              </button>
+              </button> */}
             </form>
           </div>
         </div>

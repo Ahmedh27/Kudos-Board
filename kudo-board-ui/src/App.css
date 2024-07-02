@@ -1,7 +1,8 @@
 body {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding-top: 100px;
+  text-align: center;
 }
 
 .App {
@@ -10,10 +11,11 @@ body {
 }
 
 .app-content {
-  padding-bottom: 80px; /* Height of the footer */
+  padding-bottom: 80px; 
+  text-align: center;
 }
 
-.material-icons.md-18 {
+/* .material-icons.md-18 {
   font-size: 18px;
 }
 .material-icons.md-24 {
@@ -38,4 +40,4 @@ body {
 }
 .material-icons.md-light.md-inactive {
   color: rgba(255, 255, 255, 0.3);
-}
+} */

@@ -7,171 +7,84 @@
     --muted: #888888;
     --side-padding: 20px; 
     --content-width: 1200px; 
+    --hover-line-color: #ffd700;
 }
 
-.app-header {
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    padding: 20px;
-    text-align: center;
-    font-size: 26px;
-    font-family: "Arial", sans-serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    border-radius: 5px;
-    margin-bottom: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure the header stays on top */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.app-header h1 {
-    margin: 0;
-    color: #cdbe4c;
-}
-
-.app-header a img {
-    width: 50px; 
-    height: auto;
-}
-
-body {
-    padding-top: 100px; /* Adjust this value based on the header height */
-}
+*/
 
 .SubNavbar {
     width: 100%;
     max-width: 100vw;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     padding: 0 var(--side-padding);
     background-color: var(--dark-blue); 
     color: var(--pure-white); 
+    text-align: center;
+    position: relative;
+    top: 60px; 
 }
 
-.SubNavbar .content {
-    max-width: var(--content-width);
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-}
+    .SubNavbar .content {
+        max-width: var(--content-width);
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+    
 
 .SubNavbar .content .row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 20px 0;
+    width: 100%;
 }
+
 
 .SubNavbar .content .search-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex: 1;
+    justify-content: center;
     margin-right: 40px;
+    width: 100%;
 }
 
 .SubNavbar .content .search-bar input {
     height: 40px;
     padding: 0 15px;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8px;
     border: solid 1px #e4e4e4;
-    flex: 1;
     font-size: 16px;
+    width: 250px; 
 }
 
-.SubNavbar .content .search-bar i {
-    height: 40px;
-    width: 40px;
-    background: var(--accent-orange); 
-    color: black;
-    fill: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.SubNavbar .content .links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 400px;
-}
-
-.SubNavbar .content .help,
-.SubNavbar .content .auth a,
-.SubNavbar .content .cart a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: 500;
-}
-
-.SubNavbar .content .help i {
-    color: var(--muted);
-    margin-right: 10px;
-}
-
-.SubNavbar .content .auth a {
-    color: var(--pure-white); 
-    margin: 0 5px;
-}
-
-.SubNavbar .content .cart {
-    color: var(--pure-white);
-    background: var(--accent-orange); 
-    width: 170px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 20px;
-}
-
-.SubNavbar .content .cart i,
-.SubNavbar .content .cart a {
-    color: black;
-    margin: 0 5px;
-}
-
-.SubNavbar .hamburger-menu {
-    margin-right: 40px;
-}
-
-.SubNavbar .hamburger-menu i {
-    cursor: pointer;
-    color: var(--muted);
-}
 
 .SubNavbar .category-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    flex: 1;
+    justify-content: center;
     list-style-type: none;
     height: 40px;
     font-weight: 500;
     transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
 }
 
-.SubNavbar .category-menu.closed {
-    opacity: 0;
+.SubNavbar .category-menu li {
+    margin: 0 10px; 
 }
 
-.SubNavbar .category-menu.closed li button {
-    transform: scale(0.01);
-}
-
-.SubNavbar .category-menu li.is-active button {
-    border-bottom: solid 2px var(--accent-orange); 
+.SubNavbar .category-menu li.is-active button,
+.SubNavbar .category-menu li button:hover {
+    border-bottom: solid 2px var(--hover-line-color); 
 }
 
 .SubNavbar .category-menu li button {
@@ -185,7 +98,7 @@ body {
     padding-bottom: 10px;
     border-bottom: solid 2px transparent;
     transition: all 0.2s ease;
-    color: #cdbe4c;
+    color: #9c8c12;
 }
 
 .SubNavbar .category-menu li button:active {
