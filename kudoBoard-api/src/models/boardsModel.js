@@ -36,6 +36,7 @@ const createBoards = async (boardsData) => {
   });
 };
 
+
 //Function to update prod
 const updateBoards = async (id, boardsData) => {
   return prisma.boards.update({
