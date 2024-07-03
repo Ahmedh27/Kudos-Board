@@ -4,7 +4,11 @@ Project #5: Kudos Board
 
 ## Unit Assignment: Kudos Board
 
-Submitted by: **Ahmed Hamouda, Morgan Villenvue, Larnelle Ankuda**
+Team Member Names:Ahmed Hamouda, Larnelle Ankuda, Morgan Villanueva
+
+Pod Instructor Name: Devarsh Thaker
+
+
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
