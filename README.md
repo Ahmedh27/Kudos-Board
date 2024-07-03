@@ -1,14 +1,8 @@
-# Kudos-Board
-Project #5: Kudos Board
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Unit Assignment: Kudos Board
 
 Team Member Names:Ahmed Hamouda, Larnelle Ankuda, Morgan Villanueva
 
 Pod Instructor Name: Devarsh Thaker
-
-
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
