@@ -4,7 +4,7 @@ Project #5: Kudos Board
 
 ## Unit Assignment: Kudos Board
 
-Submitted by: **NAME**
+Submitted by: **Ahmed Hamouda, Morgan Villenvue, Larnelle Ankuda**
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
