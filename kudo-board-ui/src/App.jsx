@@ -14,6 +14,7 @@ const App = () => {
 
   const [isFetching, setIsFetching] = useState(false);
   const [boards,setBoards] = useState([]);
+  const baseUrl = "http://localhost:3000";
 
 
   useEffect(() => {
@@ -21,10 +22,13 @@ const App = () => {
     const fetchBoards = async () => {
       setIsFetching(true);
       try{
-        const boardsData = await getBoards();
-        setBoards(boardsData);
+        const response = await axios.get(`${baseUrl}/boards`);
+        const data = response.data;
+        setBoards(data);
       } catch(error) {
         console.error("error: fetching product", error);
+      }finally{
+        setIsFetching(false);
       }
     }
     fetchBoards();
