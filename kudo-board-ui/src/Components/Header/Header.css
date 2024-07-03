@@ -18,8 +18,8 @@
   color: #cdbe4c;
 }
 
-.app-header a img {
-  width: auto; 
+.app-header img {
+  width: 100px; 
   height: 100px; 
 }
 

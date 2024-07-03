@@ -6,12 +6,12 @@ function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handle
 
   return (
     <div className="Navybar">
-      <nav className="SubNavbar"> 
+      <nav className="SubNavbar">
         <div className="content">
           <div className="row">
             <ul className="category-menu">
               {categories.map((cat) => (
-                <li className={activeCategory === cat ? "is-active" : ""} key={cat}>
+                <li key={cat} className={activeCategory === cat ? "is-active" : ""}>
                   <button onClick={() => setActiveCategory(cat)}>{cat}</button>
                 </li>
               ))}
@@ -33,3 +33,6 @@ function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handle
 }
 
 export default SubNavbar;
+
+
+

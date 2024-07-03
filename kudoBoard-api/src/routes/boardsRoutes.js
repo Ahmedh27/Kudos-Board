@@ -14,4 +14,7 @@ router.put("/:id", boardsController.updateBoards);
 router.delete("/:id", boardsController.deleteBoards);
 
 
+
+
+
 module.exports = router;

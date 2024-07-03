@@ -1,0 +1,69 @@
+
+.card-page {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .card-details-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .card-content {
+    margin-top: 16px;
+  }
+
+  .upvote-button, .view-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: #b9bb1f;
+    color: white;
+  }
+  
+  .upvote-button {
+    background-color: #8a4882;
+    color: white;
+  }
+  
+  .back-link {
+    text-decoration: none;
+    color: #8a4882;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .back-arrow {
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-link:hover .back-arrow {
+    color: #cdbe4c; 
+    transform: translateX(-5px); 
+  }

@@ -1,3 +1,4 @@
+
 .create-board-container {
   text-align: center;
   margin: 20px;
@@ -14,8 +15,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; 
-  max-width: 300px; 
+  width: 100%;
+  max-width: 300px;
+  position: fixed; 
+  top: 290px;
+  z-index: 1000; 
 }
 
 .modal {
@@ -70,7 +74,6 @@ button[type="submit"]:hover {
   background-color: #ffffff;
 }
 
-
 .close-button {
   background-color: #f4e736;
   color: black;
@@ -83,3 +86,4 @@ button[type="submit"]:hover {
 .close-button:hover {
   background-color: #ffffff;
 }
+

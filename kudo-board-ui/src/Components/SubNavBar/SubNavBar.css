@@ -24,7 +24,7 @@
     text-align: center;
     align-items: center;
     position: fixed;
-    top: 60px; 
+    top: 100px; 
     border-radius: 5px;
     padding: 20px;
     z-index: 1000; 
@@ -54,7 +54,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px; /* Add some space below the search bar */
+    margin-bottom: 20px; 
     width: 100%;
   }
   

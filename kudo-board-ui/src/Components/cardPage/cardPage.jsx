@@ -1,98 +1,80 @@
-import React, {useState, useEffect} from "react";
-import {useParams, Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import CreateNewCard from "../CreateNewCard/CreateNewCard";
+import "./cardPage.css";
 
+const CardPage = () => {
+  const { cardId } = useParams();
+  console.log("cardId", cardId)
+  const [cards, setCards] = useState([]);
+  const navigate = useNavigate();
 
-const cardPage = () => {
-
-    const {boardId} = useParams;
-    const [boardTitle, setBoardTitle] = useState("");
-    const [cards, setCards] = useState([]);
-    const [showModal, setShowModal] = setState(false);
-
-    useEffect(() => {
-        fetchCards();
-        fetchBoardData();
-    }, [boardId]);
-
+  useEffect(() => {
     const fetchCards = async () => {
-        try {
-            const response = await axios.get(`some fucking link`);
-            setCards(response.data.cards)
-        }catch(error){
-            console.error("error:", error);
-        }
-    }
-    
-    const fetchBoards = async () => {
-        try{
-            const response = await axios.get(`another link`);
-            const title = response.data.title;
-            setBoardTitle(title);
-        }catch(error){
-            console.error("errror:", error);
-        }
-    }
+      try {
+        const response = await axios.get(`http://localhost:3000/cards/${cardId}/cards`);
+        setCards(response.data);
+      } catch (error) {
+        console.error("error:", error);
+      }
+    };
+    fetchCards();
+  }, [cardId]);
 
-    const deletingCards = async (cardId) => {
-        try{
-            await axios.delete(`crazylink tf?`);
-            getchCards();
-        }catch(error) {
-            console.error("error can't delete card:", error)        
-        }
+  const handleUpvote = async (card) => {
+    try {
+      const updatedUpvotes = card.upvote + 1;
+      await axios.patch(`http://localhost:3000/cards/${card.card_id}`, { upvote: updatedUpvotes });
+      setCards((prevCards) =>
+        prevCards.map((c) => (c.card_id === card.card_id ? { ...c, upvote: updatedUpvotes } : c))
+      );
+    } catch (error) {
+      console.error("error:", error);
     }
+  };
 
-    const showCreateModal = () => {
-        setShowModal(!showModal);
+  const handleDelete = async (card) => {
+    try {
+      await axios.delete(`http://localhost:3000/cards/${card.card_id}`);
+      setCards((prevCards) => prevCards.filter((c) => c.card_id !== card.card_id));
+    } catch (error) {
+      console.error("error:", error);
     }
+  };
 
-    const handleSuccess = (newCard) => {
-        if(newCard && newCard.card_id){
-            setCards[...cards, newCards];
-            setShowForm(false);
-        }else {
-            console.error("error: no card data", newCard);
-        }
-    }
+  const handleCardCreated = (newCard) => {
+    setCards((prevCards) => [...prevCards, newCard]);
+  };
 
-    return(
-        <div>
-            <Link to="/">
-                <span className="back-arrow">L</span>
-            </Link>
-            <Header />
-            <h2> {boardTitle}</h2>
-            <div className="center-create-button">
-                <button className="create-card-btn" onClick={toggleForm}>
-                Create a Card
-                </button>
-                {showForm && (
-                <CardForm
-                    boardId={boardId}
-                    onSuccess={handleCreateSuccess}
-                    onClose={toggleForm}
-                />
-                )}
+  return (
+    <div className="card-page">
+      <Link to="/" className="back-link">
+        <span className="back-arrow">← Back</span>
+      </Link>
+      <Header />
+      <CreateNewCard selectedBoardId={cardId} onAddCard={handleCardCreated} />
+      <div className="card-details">
+        {cards.map((card) => (
+          <div key={card.card_id} className="card">
+            {card.image && <img src={card.image} alt={card.title} className="card-details-image" />}
+            <div className="card-content">
+              <h2>{card.title}</h2>
+              <p>{card.description}</p>
+              <p><strong>Owner:</strong> {card.owner}</p>
+              <div className="card-actions">
+                <button onClick={() => handleUpvote(card)} className="upvote-button">Upvote ({card.upvote})</button>
+                <button onClick={() => handleDelete(card)} className="delete-button">Delete</button>
+              </div>
             </div>
-
-        <div className="card-list">
-            {cards.map((card) => (
-            <div className="card-preview">
-            <Card
-                key={card.card_id}
-                card={card}
-                onDelete={() => handleDelete(card.card_id)}
-            />
-            </div>
-            ))}
-        </div>
-        <Footer />
+          </div>
+        ))}
+      </div>
+      <Footer />
     </div>
-    )
+  );
+};
 
-}
-
-export default cardPage
+export default CardPage;
