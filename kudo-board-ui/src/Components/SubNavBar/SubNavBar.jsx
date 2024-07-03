@@ -5,11 +5,19 @@ function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handle
   const categories = ["All", "Recent", "Celebration", "Thank You", "Inspiration"];
 
   return (
-    // <div className "SubNavbar">
-        <nav className="SubNavbar"> 
-            <div className="content">
-            <div className="row">
-            <div className="search-bar">
+    <div className="Navybar">
+      <nav className="SubNavbar"> 
+        <div className="content">
+          <div className="row">
+            <ul className="category-menu">
+              {categories.map((cat) => (
+                <li className={activeCategory === cat ? "is-active" : ""} key={cat}>
+                  <button onClick={() => setActiveCategory(cat)}>{cat}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="search-bar">
             <input
               type="text"
               name="search"
@@ -19,19 +27,8 @@ function SubNavbar({ activeCategory, setActiveCategory, searchInputValue, handle
             />
           </div>
         </div>
-    {/* </div> */}
-
-    <div className="row">
-          <ul className="category-menu">
-            {categories.map((cat) => (
-              <li className={activeCategory === cat ? "is-active" : ""} key={cat}>
-                <button onClick={() => setActiveCategory(cat)}>{cat}</button>
-              </li>
-            ))}
-          </ul>
-        </div>
+      </nav>
     </div>
-    </nav>
   );
 }
 

@@ -1,6 +1,9 @@
 .create-card-container {
     text-align: center;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .create-card-button {
@@ -8,6 +11,11 @@
     font-size: 16px;
     cursor: pointer;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    max-width: 300px; 
   }
   
   .modal {

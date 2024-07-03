@@ -38,7 +38,7 @@ const CreateNewCard = () => {
           params: {
             api_key: API_KEY,
             q: searchgif,
-            limit: 5
+            limit: 6
           }
         });
         setGifs(response.data.data);
@@ -95,7 +95,7 @@ const CreateNewCard = () => {
                 <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
               ))}
             </div>
-            
+
               <div>
                 <label htmlFor="gifurl">Enter GIF URL:</label>
                 <input
