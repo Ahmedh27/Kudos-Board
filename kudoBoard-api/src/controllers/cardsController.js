@@ -10,6 +10,9 @@ const getAllCards = async (req, res) => {
   }
 };
 
+
+
+
 // Function to get card by ID
 const getCardsById = async (req, res) => {
   try {
@@ -47,6 +50,24 @@ const deleteCards = async (req, res) => {
   }
 };
 
+// Function to get all cards for a specific board
+const getCardsByBoardId = async (req, res) => {
+  try {
+    const cards = await cardsModel.getCardsByBoardId(req.params.board_id);
+    res.status(200).json(cards);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+// Function to create a new card for a specific board
+const createCardForBoard = async (req, res) => {
+  try {
+    const newCard = await cardsModel.createCardForBoard(req.params.board_id, req.body);
+    res.status(201).json(newCard);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 //export the functions
 module.exports = {
@@ -54,4 +75,6 @@ module.exports = {
   getCardsById,
   createCards,
   deleteCards,
+  getCardsByBoardId,
+  createCardForBoard
 };

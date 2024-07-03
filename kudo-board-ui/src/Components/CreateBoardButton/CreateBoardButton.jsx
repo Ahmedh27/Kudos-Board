@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './CreateBoardButton.css'; 
 
-const CreateBoardButton = () => {
+import React, { useState } from 'react';
+import axios from 'axios';
+import './CreateBoardButton.css';
+
+const CreateBoardButton = ({ onAddBoard }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -15,9 +17,21 @@ const CreateBoardButton = () => {
     setIsModalOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Title:', title, 'Category:', category, 'Author:', author);
+    const newBoard = {
+      title,  // Changed from name to title to match schema
+      category,
+      author,
+    };
+
+    try {
+      const response = await axios.post('http://localhost:3000/boards', newBoard);
+      onAddBoard(response.data);
+    } catch (error) {
+      console.error('Error creating board:', error);
+    }
+
     setTitle('');
     setCategory('');
     setAuthor('');
@@ -71,9 +85,6 @@ const CreateBoardButton = () => {
                 />
               </div>
               <button type="submit">Create Board</button>
-              {/* <button type="button" className="close-button" onClick={closeModal}>
-                Close
-              </button> */}
             </form>
           </div>
         </div>
@@ -83,4 +94,3 @@ const CreateBoardButton = () => {
 };
 
 export default CreateBoardButton;
-

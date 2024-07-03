@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './CreateNewCard.css'; 
+import './CreateNewCard.css';
 
-const CreateNewCard = () => {
+const CreateNewCard = ({ selectedBoardId, onAddCard }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [Cardtitle, setCardTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -10,6 +10,7 @@ const CreateNewCard = () => {
   const [gifurl, setGifurl] = useState('');
   const [owner, setOwner] = useState('');
   const [gifs, setGifs] = useState([]);
+  const [gifCopied, setGifCopied] = useState(false);
 
   const API_KEY = 'FvErzQwqV3QYB0Rv8nofNj304xrjQyz2';
 
@@ -19,15 +20,36 @@ const CreateNewCard = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Cardtitle:', Cardtitle, 'description:', description, 'searchgif:', searchgif, 'gifurl:', gifurl, 'owner:', owner);
+    // Clear the form and GIFs when the modal is closed
     setCardTitle('');
     setDescription('');
+    setSearchgif('');
+    setGifurl('');
     setOwner('');
-    setIsModalOpen(false);
+    setGifs([]);
+    setGifCopied(false);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (selectedBoardId && gifurl) {
+      const newCard = {
+        title: Cardtitle,
+        description: description,
+        image: gifurl,
+        owner: owner,
+        upvote: 0,
+        board_id: selectedBoardId,
+      };
+
+      try {
+        const response = await axios.post(`http://localhost:3000/cards/${selectedBoardId}/cards`, newCard);
+        onAddCard(response.data);
+        closeModal();
+      } catch (error) {
+        console.error('Error creating card:', error);
+      }
+    }
   };
 
   const handleSearchGifs = async (e) => {
@@ -38,7 +60,7 @@ const CreateNewCard = () => {
           params: {
             api_key: API_KEY,
             q: searchgif,
-            limit: 5
+            limit: 6
           }
         });
         setGifs(response.data.data);
@@ -46,6 +68,14 @@ const CreateNewCard = () => {
         console.error('Error fetching GIFs:', error);
       }
     }
+  };
+
+  const handleGifSelect = (url) => {
+    setGifurl(url);
+    navigator.clipboard.writeText(url).then(() => {
+      setGifCopied(true);
+      setTimeout(() => setGifCopied(false), 2000);
+    });
   };
 
   return (
@@ -70,16 +100,6 @@ const CreateNewCard = () => {
                 />
               </div>
               <div>
-                <label htmlFor="description">Card description:</label>
-                <input
-                  type="text"
-                  id="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
                 <label htmlFor="searchgif">Search GIFs...</label>
                 <input
                   type="text"
@@ -89,24 +109,39 @@ const CreateNewCard = () => {
                   required
                 />
               </div>
-              <button type="submit2" onClick={handleSearchGifs}>Search</button>
+              <button type="button" onClick={handleSearchGifs}>Search</button>
               <div className="gif-results">
-              {gifs.map((gif) => (
-                <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
-              ))}
-            </div>
-            
+                {gifs.map((gif) => (
+                  <img
+                    key={gif.id}
+                    src={gif.images.fixed_height.url}
+                    alt={gif.title}
+                    onClick={() => handleGifSelect(gif.images.fixed_height.url)}
+                    style={{ cursor: 'pointer', margin: '5px' }}
+                  />
+                ))}
+              </div>
+              {gifurl && (
+                <div className="copy-url-section">
+                  <label htmlFor="gifurl">Selected GIF URL:</label>
+                  <input
+                    type="text"
+                    id="gifurl"
+                    value={gifurl}
+                    readOnly
+                  />
+                  {gifCopied && <span className="copy-notification">URL Copied!</span>}
+                </div>
+              )}
               <div>
-                <label htmlFor="gifurl">Enter GIF URL:</label>
+                <label htmlFor="description">Card description:</label>
                 <input
                   type="text"
-                  id="gifurl"
-                  value={gifurl}
-                  onChange={(e) => setGifurl(e.target.value)}
-                  required
+                  id="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-              <button type="submit3">Copy GIF URL</button>
               <div>
                 <label htmlFor="owner">Card Owner:</label>
                 <input
@@ -114,12 +149,10 @@ const CreateNewCard = () => {
                   id="owner"
                   value={owner}
                   onChange={(e) => setOwner(e.target.value)}
-                  required
                 />
               </div>
               <button type="submit">Create Card</button>
             </form>
-
           </div>
         </div>
       )}
@@ -128,3 +161,5 @@ const CreateNewCard = () => {
 };
 
 export default CreateNewCard;
+
+

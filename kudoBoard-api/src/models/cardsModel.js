@@ -31,10 +31,31 @@ const deleteCards = async (card_id) => {
   });
 };
 
+// Function gets all the cards for a specific board
+const getCardsByBoardId = async (boardId) => {
+  return prisma.cards.findMany({ where: { board_id: parseInt(boardId) } });
+};
+
+// Function to create a new card for a specific board
+const createCardForBoard = async (boardId, cardsData) => {
+  return prisma.cards.create({
+    data: {
+      board_id: parseInt(boardId),
+      title: cardsData.title,
+      description: cardsData.description,
+      image: cardsData.image,
+      upvote: parseInt(cardsData.upvote),
+      owner: cardsData.owner,
+    },
+  });
+};
+
 //export the functions
 module.exports = {
   getAllCards,
   getCardsById,
   createCards,
   deleteCards,
+  getCardsByBoardId,
+  createCardForBoard
 };

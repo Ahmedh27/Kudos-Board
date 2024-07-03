@@ -10,6 +10,11 @@ router.get("/:card_id", cardsController.getCardsById);
 router.post("/", cardsController.createCards);
 //delete new card
 router.delete("/:card_id", cardsController.deleteCards);
+// get all cards for a specific board
+router.get("/:board_id/cards", cardsController.getCardsByBoardId);
+
+// add a new card to a specific board
+router.post("/:board_id/cards", cardsController.createCardForBoard);
 
 
 
