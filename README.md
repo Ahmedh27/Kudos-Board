@@ -54,24 +54,22 @@ Deployed Backend: [Backend Deployed link](ADD_LINK_HERE)
 
 ### Walkthrough Video
 Frontend Walkthrough Video
-``
-
-Backend Walkthrough Video
 `<div>
-    <a href="https://www.loom.com/share/3ba728e02bad4237a70186d4021f443c">
-      <p>Backend Kudos-Board - Watch Video</p>
+    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
+      <p>Front End features/Back-end implications - Watch Video</p>
     </a>
-    <a href="https://www.loom.com/share/3ba728e02bad4237a70186d4021f443c">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/3ba728e02bad4237a70186d4021f443c-with-play.gif">
+    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6b692694c39e4664affff7256b49084f-1720057445324-with-play.gif">
     </a>
   </div>`
 
- '<div>
-    <a href="https://www.loom.com/share/1cc2a3ad38454c3589c2b09bc45da09f">
-      <p>Kudo-Board BACKEND - Watch Video</p>
+Backend Walkthrough Video
+`<div>
+    <a href="https://www.loom.com/share/86d0f1b350c14cdc84e4aa11377870d5">
+      <p>Kudo-Board Backend Video - Watch Video</p>
     </a>
-    <a href="https://www.loom.com/share/1cc2a3ad38454c3589c2b09bc45da09f">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/1cc2a3ad38454c3589c2b09bc45da09f-with-play.gif">
+    <a href="https://www.loom.com/share/86d0f1b350c14cdc84e4aa11377870d5">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/86d0f1b350c14cdc84e4aa11377870d5-with-play.gif">
     </a>
   </div>'
 
@@ -79,20 +77,22 @@ Backend Walkthrough Video
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+  While there weren't any topics in Unit 5, we were given instruction on how to create a User Authentication and a review on past topics: Frontend/Backend, Axios, useEffect. These topic reviews and code alongs helped us to complete the Kudos Board project as a pod.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+  With more time, we would try to clean up the current code being used and then implement stretch features: Accounts and Comment section for the cards. These features would give the Kudos Board more user interaction. Finally, we'd work on the CSS and give the app a polished feel
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+  During our project demo, our project was able to create and display the boards. And when selected, it would show and create the cards; all being saved to the database. While the search feature didn't work as intended, we were successfull 
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+W3 Schools, MDM, StackerOverflow, Google
 
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+SO to my tech leads: Keith, Devarsh, and Alex; SO to my pod: Ahmed, Larnelle, Morgan
