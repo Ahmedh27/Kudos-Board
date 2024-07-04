@@ -5,31 +5,35 @@ Team Member Names:Ahmed Hamouda, Larnelle Ankuda, Morgan Villanueva
 Pod Instructor Name: Devarsh Thaker
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
+Deployed Backend: [Backend Deployed link](ADD_LINK_HERE)
+Deployed Backend: [Backend Deployed link](ADD_LINK_HERE)
+
+
 
 ### Application Features
 
 #### CORE FEATURES
 
-- [ ] **Home Page**
-  - [ ] Displays header, banner, search, board grid, and footer.
-  - [ ] Displays preview of all boards on initial page load.
-    - [ ] Boards previews should show an image/gif and board title.
-  - [ ] Users can click on a category (recent, celebration, thank you, inspiration) to filter the boards.
-    - [ ] Recent displays most recently created boards.
-    - [ ] Other categories display boards of that type.
-  - [ ] Users can search for a board by name.
-  - [ ] Users can click on a board to navigate to a new page containing that board.
-  - [ ] Users can create a new board.
-    - [ ] Boards should have a title, category, and author (optional).
-  - [ ] User can delete boards.
+- [X] **Home Page**
+  - [X] Displays header, banner, search, board grid, and footer.
+  - [X] Displays preview of all boards on initial page load.
+    - [X] Boards previews should show an image/gif and board title.
+  - [X] Users can click on a category (recent, celebration, thank you, inspiration) to filter the boards.
+    - [X] Recent displays most recently created boards.
+    - [X] Other categories display boards of that type.
+  - [X] Users can search for a board by name.
+  - [X] Users can click on a board to navigate to a new page containing that board.
+  - [X] Users can create a new board.
+    - [X] Boards should have a title, category, and author (optional).
+  - [X] User can delete boards.
   
-- [ ] **Board Page**
-  - [ ] Displays a list of all cards for a board.
-    -  [ ] Each card features a text message.
-    -  [ ] Each card features a gif found using the [GIPHY API](https://developers.giphy.com/docs/api/).
-    -  [ ] Users can optionally sign the card as the author.  
--   [ ] Cards can be upvoted.
--   [ ] Cards can be deleted.
+- [X] **Board Page**
+  - [X] Displays a list of all cards for a board.
+    -  [X] Each card features a text message.
+    -  [X] Each card features a gif found using the [GIPHY API](https://developers.giphy.com/docs/api/).
+    -  [X] Users can optionally sign the card as the author.  
+-   [X] Cards can be upvoted.
+-   [X] Cards can be deleted.
 
 
 #### STRETCH FEATURES
@@ -42,17 +46,25 @@ Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
     - [ ]  Anonymous cards or cards by guest users should still be allowed.
   - [ ] Add a new filter option on the home page to display only the current user's boards.
   - [ ] Allow boards to be deleted only if they are owned by the user.
-- [ ] **Deployment**
-  - [ ] Website is deployed via Render.
+- [X] **Deployment**
+  - [X] Website is deployed via Render.
 - [ ] **Comments**
   - [ ] Users should be able to comment on cards.
 
 
 ### Walkthrough Video
+Frontend Walkthrough Video
+``
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+Backend Walkthrough Video
+`<div>
+    <a href="https://www.loom.com/share/3ba728e02bad4237a70186d4021f443c">
+      <p>Backend Kudos-Board - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/3ba728e02bad4237a70186d4021f443c">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/3ba728e02bad4237a70186d4021f443c-with-play.gif">
+    </a>
+  </div>`
 
 ### Reflection
 
