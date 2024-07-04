@@ -20,7 +20,6 @@ const CreateNewCard = ({ selectedBoardId, onAddCard }) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    // Clear the form and GIFs when the modal is closed
     setCardTitle('');
     setDescription('');
     setSearchgif('');
@@ -43,7 +42,7 @@ const CreateNewCard = ({ selectedBoardId, onAddCard }) => {
       };
 
       try {
-        const response = await axios.post(`http://localhost:3000/cards/${selectedBoardId}/cards`, newCard);
+        const response = await axios.post(`https://kudos-board-sn57.onrender.com/cards/${selectedBoardId}/cards`, newCard);
         onAddCard(response.data);
         closeModal();
       } catch (error) {

@@ -10,15 +10,12 @@ const getAllCards = async (req, res) => {
   }
 };
 
-
-
-
 // Function to get card by ID
 const getCardsById = async (req, res) => {
   try {
-    const order = await cardsModel.getCardsById(req.params.card_id);
-    if (order) {
-      res.status(200).json(order);
+    const card = await cardsModel.getCardsById(req.params.card_id);
+    if (card) {
+      res.status(200).json(card);
     } else {
       res.status(404).json({ error: "Card not found" });
     }
@@ -36,6 +33,7 @@ const createCards = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 // Function to delete cards
 const deleteCards = async (req, res) => {
   try {
@@ -59,6 +57,7 @@ const getCardsByBoardId = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 // Function to create a new card for a specific board
 const createCardForBoard = async (req, res) => {
   try {
@@ -69,12 +68,27 @@ const createCardForBoard = async (req, res) => {
   }
 };
 
-//export the functions
+// Function to update a card
+const updateCards = async (req, res) => {
+  try {
+    const updatedCard = await cardsModel.updateCards(req.params.card_id, req.body);
+    if (updatedCard) {
+      res.status(200).json(updatedCard);
+    } else {
+      res.status(404).json({ error: "Card not found" });
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+// Export the functions
 module.exports = {
   getAllCards,
   getCardsById,
   createCards,
   deleteCards,
   getCardsByBoardId,
-  createCardForBoard
+  createCardForBoard,
+  updateCards
 };

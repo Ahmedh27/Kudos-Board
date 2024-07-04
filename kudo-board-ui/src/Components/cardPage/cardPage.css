@@ -6,7 +6,7 @@
   
   .card-details {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   
@@ -61,9 +61,13 @@
     font-size: 20px;
     font-weight: bold;
     transition: color 0.3s ease, transform 0.3s ease;
+    top: 220px;
+    left: 100px;
   }
   
   .back-link:hover .back-arrow {
     color: #cdbe4c; 
     transform: translateX(-5px); 
   }
+
+  

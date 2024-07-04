@@ -16,7 +16,8 @@ const Main = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [filteredBoards, setFilteredBoards] = useState([]);
   const [selectedBoardId, setSelectedBoardId] = useState(null);
-  const baseUrl = "http://localhost:3000";
+  const [activeCategory, setActiveCategory] = useState("All");
+  const baseUrl = "https://kudos-board-sn57.onrender.com";
   const location = useLocation();
 
   useEffect(() => {
@@ -36,6 +37,23 @@ const Main = () => {
     fetchBoards();
   }, []);
 
+  useEffect(() => {
+    filterBoards();
+  }, [boards, activeCategory, searchInputValue]);
+
+  const filterBoards = () => {
+    let filtered = boards;
+    if (activeCategory !== "All") {
+      filtered = filtered.filter(board => board.category === activeCategory);
+    }
+    if (searchInputValue) {
+      filtered = filtered.filter(board =>
+        board.title.toLowerCase().includes(searchInputValue.toLowerCase())
+      );
+    }
+    setFilteredBoards(filtered);
+  };
+
   const handleDelete = async (cardId) => {
     try {
       await axios.delete(`${baseUrl}/cards/${cardId}`);
@@ -48,11 +66,6 @@ const Main = () => {
 
   const handleOnSearchInputChange = (e) => {
     setSearchInputValue(e.target.value);
-    setFilteredBoards(
-      boards.filter((board) =>
-        board.name.toLowerCase().includes(e.target.value.toLowerCase())
-      )
-    );
   };
 
   const handleSelectBoard = (boardId) => {
@@ -78,6 +91,8 @@ const Main = () => {
       {location.pathname === "/" && (
         <>
           <SubNavBar
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
             searchInputValue={searchInputValue}
             handleOnSearchInputChange={handleOnSearchInputChange}
           />
@@ -122,7 +137,6 @@ const Main = () => {
             )
           }
         />
-        {/* <Route path="/boards" element = {<Board />} /> */}
         <Route path="/boards/:cardId/cards" element={<CardPage />} />
       </Routes>
       <Footer />
@@ -134,7 +148,7 @@ const App = () => (
   <BrowserRouter>
     <Main />
   </BrowserRouter>
-  
 );
 
 export default App;
+
