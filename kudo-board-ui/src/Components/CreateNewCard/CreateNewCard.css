@@ -35,7 +35,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 600px;
-    max-height: 80vh; /* Adjust as needed */
+    max-height: 80vh; 
     overflow: auto;
     text-align: left;
     position: relative;
