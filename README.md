@@ -5,9 +5,9 @@ Team Member Names:Ahmed Hamouda, Larnelle Ankuda, Morgan Villanueva
 Pod Instructor Name: Devarsh Thaker
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
-Deployed Backend: [Backend Deployed link](ADD_LINK_HERE)
-Deployed Backend: [Backend Deployed link](ADD_LINK_HERE)
 
+* [Deployed Frontend  Link](https://kudos-board-frontend-mjht.onrender.com)
+* [Deployed Backend Link](https://kudos-board-sn57.onrender.com)
 
 
 ### Application Features
