@@ -8,7 +8,6 @@ import "./cardPage.css";
 
 const CardPage = () => {
   const { cardId } = useParams();
-  console.log("cardId", cardId)
   const [cards, setCards] = useState([]);
   const navigate = useNavigate();
 
@@ -77,3 +76,4 @@ const CardPage = () => {
 };
 
 export default CardPage;
+
