@@ -5,6 +5,7 @@ body {
   padding-top: 70px;
   text-align: center;
   /* margin-right: 16px; */
+  
 }
 
 
@@ -20,6 +21,8 @@ body {
 .App {
   min-height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-content {

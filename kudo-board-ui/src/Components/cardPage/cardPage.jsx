@@ -15,7 +15,7 @@ const CardPage = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/cards/${cardId}/cards`);
+        const response = await axios.get(`https://kudos-board-sn57.onrender.com/cards/${cardId}/cards`);
         setCards(response.data);
       } catch (error) {
         console.error("error:", error);
@@ -27,7 +27,7 @@ const CardPage = () => {
   const handleUpvote = async (card) => {
     try {
       const updatedUpvotes = card.upvote + 1;
-      await axios.patch(`http://localhost:3000/cards/${card.card_id}`, { upvote: updatedUpvotes });
+      await axios.patch(`https://kudos-board-sn57.onrender.com/cards/${card.card_id}`, { upvote: updatedUpvotes });
       setCards((prevCards) =>
         prevCards.map((c) => (c.card_id === card.card_id ? { ...c, upvote: updatedUpvotes } : c))
       );
@@ -38,7 +38,7 @@ const CardPage = () => {
 
   const handleDelete = async (card) => {
     try {
-      await axios.delete(`http://localhost:3000/cards/${card.card_id}`);
+      await axios.delete(`https://kudos-board-sn57.onrender.com/cards/${card.card_id}`);
       setCards((prevCards) => prevCards.filter((c) => c.card_id !== card.card_id));
     } catch (error) {
       console.error("error:", error);
@@ -72,7 +72,6 @@ const CardPage = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </div>
   );
 };

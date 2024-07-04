@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://kudos-board-sn57.onrender.com";
 
 export const getBoards = async () => {
     try {

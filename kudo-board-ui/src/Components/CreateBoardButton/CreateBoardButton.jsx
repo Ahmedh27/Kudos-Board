@@ -20,13 +20,13 @@ const CreateBoardButton = ({ onAddBoard }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newBoard = {
-      title,  // Changed from name to title to match schema
+      title,  
       category,
       author,
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/boards', newBoard);
+      const response = await axios.post('https://kudos-board-sn57.onrender.com/boards', newBoard);
       onAddBoard(response.data);
     } catch (error) {
       console.error('Error creating board:', error);
