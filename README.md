@@ -66,6 +66,15 @@ Backend Walkthrough Video
     </a>
   </div>`
 
+  <div>
+    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
+      <p>Front End features/Back-end implications - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6b692694c39e4664affff7256b49084f-with-play.gif">
+    </a>
+  </div>
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
