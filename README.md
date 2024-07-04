@@ -67,11 +67,11 @@ Backend Walkthrough Video
   </div>`
 
  '<div>
-    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
-      <p>Front End features/Back-end implications - Watch Video</p>
+    <a href="https://www.loom.com/share/1cc2a3ad38454c3589c2b09bc45da09f">
+      <p>Kudo-Board BACKEND - Watch Video</p>
     </a>
-    <a href="https://www.loom.com/share/6b692694c39e4664affff7256b49084f">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6b692694c39e4664affff7256b49084f-with-play.gif">
+    <a href="https://www.loom.com/share/1cc2a3ad38454c3589c2b09bc45da09f">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/1cc2a3ad38454c3589c2b09bc45da09f-with-play.gif">
     </a>
   </div>'
 
